@@ -1,0 +1,8 @@
+.navbar {
+  padding: 0.5rem 2rem;
+  backdrop-filter: blur(15px) !important;
+  border-bottom: 3px solid #216783;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
