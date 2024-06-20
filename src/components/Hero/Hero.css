@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  top: 0;
+  top: 0px;
   left: 0;
   height: 100vh;
   width: 100%;
@@ -50,7 +50,7 @@
   color: #fff;
   font-weight: 700;
   font-size: 1.3rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 /* ----------------------- media queries ----------------------- */

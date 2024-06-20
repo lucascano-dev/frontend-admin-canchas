@@ -4,6 +4,7 @@ import { Login } from '../pages/Login/Login';
 import { Register } from '../pages/Register/Register';
 import { About } from '../pages/About/About';
 import { Admin } from '../pages/Admin/Admin';
+import { Reservas } from '../pages/Reservas/Reservas';
 
 export const AppRouter = () => {
   return (
@@ -14,6 +15,7 @@ export const AppRouter = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/reservas" element={<Reservas />} />
       </Routes>
     </BrowserRouter>
   );

@@ -3,9 +3,8 @@ import { NavbarComponent } from '../../components/Navbar/NavbarComponent';
 
 export const Home = () => {
   return (
-    <div className="Hero">
+    <div className="Home">
       <NavbarComponent />
-      {/* <h1 className="text-center bg-danger">Home</h1> */}
       <Hero />
     </div>
   );

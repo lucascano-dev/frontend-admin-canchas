@@ -7,7 +7,7 @@ export const Hero = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/about');
+    navigate('/reservas');
   };
 
   return (
@@ -15,16 +15,14 @@ export const Hero = () => {
       <img className="hero-image" src={hero} alt="manarola italia" />
 
       <div className="hero-overlay">
-        <h1 className="overlay-title">Sale Fulbacho⚽</h1>
+        <div className="container">
+          <h1 className="overlay-title text-center">⚽Sale Fulbacho</h1>
 
-        <div className="overlay-container">
-          <p className="overlay-paragraph">
-            La pasión por el fútbol la podes disfrutar con nosotros y la manera más sencilla y rápida de reservar
-            canchas de fútbol en tu ciudad. Con solo unos clics, encuentra la cancha perfecta para tu equipo, elige la
-            hora que mejor te convenga y disfruta del mejor fútbol.
+          <p className="overlay-paragraph text-center">
+            Disfrutá con nostros la pasión por el fútbol y reservá tu cancha para un fulbacho con amigos.
           </p>
 
-          <Buttons text="¡Reserva ahora!" handleClick={handleClick} color="btn btn-outline-warning fw-bold py-xxl-2" />
+          <Buttons text="¡Reserva ahora!" handleClick={handleClick} color="btn btn-warning fw-bold py-xxl-2" />
         </div>
       </div>
     </div>
