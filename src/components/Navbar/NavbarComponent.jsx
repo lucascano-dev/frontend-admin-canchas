@@ -13,8 +13,8 @@ export const NavbarComponent = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto seccion-links">
             <Nav.Link href="/">Inicio</Nav.Link>
-            <Nav.Link href="/about">Acerca de</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="/about">Nosotros</Nav.Link>
+            <Nav.Link href="#pricing">Contacto</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

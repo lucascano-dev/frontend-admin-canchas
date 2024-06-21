@@ -22,9 +22,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   gap: 1rem;
   padding: 0 1rem;
+}
+
+.container-left {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  width: 50%;
+  margin-left: 30px;
+  /* margin-left: 30px; */
+  /* border: 2px solid red; */
 }
 
 .overlay-title {
