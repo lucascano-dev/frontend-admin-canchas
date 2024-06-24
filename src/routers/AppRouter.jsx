@@ -5,6 +5,7 @@ import { Register } from '../pages/Register/Register';
 import { About } from '../pages/About/About';
 import { Admin } from '../pages/Admin/Admin';
 import { Reservas } from '../pages/Reservas/Reservas';
+import { Gallery } from '../pages/Gallery/Gallery';
 
 export const AppRouter = () => {
   return (
@@ -16,6 +17,7 @@ export const AppRouter = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/reservas" element={<Reservas />} />
+        <Route path="/galeria" element={<Gallery />} />
       </Routes>
     </BrowserRouter>
   );

@@ -14,6 +14,7 @@ export const NavbarComponent = () => {
           <Nav className="ml-auto seccion-links">
             <Nav.Link href="/">Inicio</Nav.Link>
             <Nav.Link href="/about">Nosotros</Nav.Link>
+            <Nav.Link href="/galeria">Galería</Nav.Link>
             <Nav.Link href="#pricing">Contacto</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
