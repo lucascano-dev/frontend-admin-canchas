@@ -12,17 +12,19 @@ export const Selector = () => {
   };
 
   return (
-    <Form.Select className="selector" aria-label="Default select example" onChange={handleChange} defaultValue="">
-      <option value="" disabled>
-        Clic aquí para realizar una reserva rápida
-      </option>
-      <optgroup label="Reservas">
-        <option value="0">Reservar otros días</option>
-      </optgroup>
-      <optgroup label="Disponibilidad">
-        <option value="1">Consultá disponibilidad</option>
-        <option value="2">Hoy hay canchas disponibles</option>
-      </optgroup>
-    </Form.Select>
+    <div className="w-50">
+      <Form.Select className="selector" aria-label="Default select example" onChange={handleChange} defaultValue="">
+        <option value="" disabled>
+          Clic aquí para reservar ahora
+        </option>
+        <optgroup label="Reservas">
+          <option value="0">Reservar otros días</option>
+        </optgroup>
+        <optgroup label="Disponibilidad">
+          <option value="1">Consultá disponibilidad</option>
+          <option value="2">Hoy hay canchas disponibles</option>
+        </optgroup>
+      </Form.Select>
+    </div>
   );
 };

@@ -29,7 +29,7 @@
 
 .container-left {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: start;
   justify-content: flex-start;
   width: 50%;

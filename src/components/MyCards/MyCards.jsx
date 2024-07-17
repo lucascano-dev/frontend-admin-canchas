@@ -6,7 +6,7 @@ export const MyCards = ({ title, text, imageUrl, buttonVariant, textButton, toUR
   console.log(imageUrl);
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '17rem' }}>
       <Card.Img variant="top" src={imageUrl} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
