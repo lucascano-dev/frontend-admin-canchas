@@ -1,5 +1,10 @@
-import React from 'react';
+import { NavbarComponent } from '../../components/Navbar/NavbarComponent';
 
 export const Gallery = () => {
-  return <div>Gallery</div>;
+  return (
+    <>
+      <NavbarComponent />
+      <div>Gallery</div>
+    </>
+  );
 };

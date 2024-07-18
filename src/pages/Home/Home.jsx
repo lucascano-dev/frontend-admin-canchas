@@ -1,13 +1,10 @@
 import { Hero } from '../../components/Hero/Hero';
-import { NavbarComponent } from '../../components/Navbar/NavbarComponent';
 import imagess from '../../assets/images/hero.jpeg';
 import { MyCards } from '../../components/MyCards/MyCards';
-
 export const Home = () => {
   return (
     <>
       <div className="Home">
-        <NavbarComponent />
         <Hero />
       </div>
       <div className="Cards d-flex justify-content-center flex-wrap m-5 gap-5">
