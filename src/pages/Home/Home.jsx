@@ -40,6 +40,38 @@ export const Home = () => {
           toURL={'/reservas'}
           textButton="Reservar"
         />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
       </div>
     </>
   );
