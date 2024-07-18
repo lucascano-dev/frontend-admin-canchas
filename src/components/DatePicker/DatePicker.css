@@ -1,0 +1,25 @@
+/* Cambia el color de fondo del ítem seleccionado en el selector de hora */
+.date-picker .react-datepicker__time-list-item--selected {
+  background-color: red; /* Cambia esto al color que desees */
+  color: white; /* Cambia el color del texto si es necesario */
+}
+
+/* Cambia el color de fondo del ítem seleccionado cuando se pasa el mouse */
+.date-picker .react-datepicker__time-list-item--selected:hover {
+  background-color: darkred; /* Cambia esto al color que desees */
+  color: white; /* Cambia el color del texto si es necesario */
+}
+
+.react-datepicker__time-list-item--selected {
+  background-color: #2d4f3e !important; /* Cambia esto al color que desees */
+  color: white !important; /* Cambia el color del texto si es necesario */
+  font-size: medium;
+}
+
+.react-datepicker__time-list {
+  font-size: medium;
+}
+
+.react-datepicker__month-container {
+  font-size: medium;
+}

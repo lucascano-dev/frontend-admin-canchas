@@ -1,30 +1,45 @@
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './Selector.css';
 
-export const Selector = () => {
-  const navigate = useNavigate();
-
-  const handleChange = (event) => {
-    if (event.target.value === '0') {
-      navigate('/reservas');
-    }
-  };
+export const Selector = ({ textoInicial = 'Seleccione una opción', optionsData, handleChange }) => {
+  // FORMATO DEL OBJETO CON LAS OPCIONES DEL SELECTOR
+  // const optionsData = [
+  //   {
+  //     label: 'Reservas',
+  //     options: [{ value: '0', text: 'Reservar otros días' }],
+  //   },
+  //   {
+  //     label: 'Disponibilidad',
+  //     options: [
+  //       { value: '1', text: 'Consultá disponibilidad' },
+  //       { value: '2', text: 'Hoy hay canchas disponibles' },
+  //     ],
+  //   },
+  // ];
 
   return (
-    <div className="w-50">
-      <Form.Select className="selector" aria-label="Default select example" onChange={handleChange} defaultValue="">
+    <div className="selector">
+      <Form.Select aria-label="Default select example" onChange={handleChange} defaultValue="">
         <option value="" disabled>
-          Clic aquí para reservar ahora
+          {textoInicial}
         </option>
-        <optgroup label="Reservas">
-          <option value="0">Reservar otros días</option>
-        </optgroup>
-        <optgroup label="Disponibilidad">
-          <option value="1">Consultá disponibilidad</option>
-          <option value="2">Hoy hay canchas disponibles</option>
-        </optgroup>
+        {optionsData.map((group, index) => (
+          <optgroup key={index} label={group.label}>
+            {group.options.map((option, idx) => (
+              <option key={idx} value={option.value}>
+                {option.text}
+              </option>
+            ))}
+          </optgroup>
+        ))}
       </Form.Select>
     </div>
   );
+};
+
+Selector.propTypes = {
+  optionsData: PropTypes.array,
+  textoInicial: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
 };
