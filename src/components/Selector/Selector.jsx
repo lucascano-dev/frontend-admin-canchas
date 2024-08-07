@@ -19,8 +19,13 @@ export const Selector = ({ textoInicial = 'Seleccione una opción', optionsData,
   // ];
 
   return (
-    <div className="selector">
-      <Form.Select aria-label="Default select example" onChange={handleChange} defaultValue="">
+    <div className="container-selector">
+      <Form.Select
+        className="formulario-selector w-auto"
+        aria-label="Default select"
+        onChange={handleChange}
+        defaultValue=""
+      >
         <option value="" disabled>
           {textoInicial}
         </option>

@@ -1,116 +1,13 @@
 .hero {
+  background-size: cover;
+  height: 90vh;
+  width: 100%;
+  background-image: url('../../assets/images/hero.png');
+}
+
+.container-hero {
+  display: flex;
   position: relative;
-  top: 0px;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-}
-
-.hero-image {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 0 1rem;
-}
-
-.container-left {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: start;
-  justify-content: flex-start;
-  width: 50%;
-  margin-left: 30px;
-  /* margin-left: 30px; */
-  /* border: 2px solid red; */
-}
-
-.container-right {
-  padding-top: 50px;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-}
-
-.contenedor-selector {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  background-color: rgba(30, 101, 105, 0.394); /* Color blanco con 70% de opacidad */
-  backdrop-filter: blur(5px); /* Aplicar un desenfoque de 10px */
-}
-
-.overlay-title {
-  color: #fff;
-  font-weight: 700;
-  font-size: 3.5rem;
-  text-align: center;
-  text-shadow: 2px 2px 3px #e4dede;
-}
-
-.overlay-container {
-  height: auto;
-  width: 100%;
-  max-width: 990px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.overlay-paragraph {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.3rem;
-  /* text-align: center; */
-}
-
-/* ----------------------- media queries ----------------------- */
-
-@media screen and (max-width: 576px) {
-  .overlay-title {
-    font-size: 2rem;
-    text-shadow: 1px 1px 3px #e4dede;
-  }
-
-  .overlay-paragraph {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (min-width: 577px) and (max-width: 768px) {
-  .overlay-title {
-    font-size: 2.5rem;
-  }
-
-  .overlay-paragraph {
-    font-size: 1.2rem;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .overlay-title {
-    font-size: 4.5rem;
-  }
-
-  .overlay-paragraph {
-    font-size: 1.8rem;
-  }
+  top: 25%;
+  margin: 0 5%;
 }

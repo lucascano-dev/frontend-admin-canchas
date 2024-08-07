@@ -1,6 +1,8 @@
 .navbar {
   border-bottom: 3px solid #216783;
   color: white;
+  height: auto;
+  font-size: 1.1rem;
 }
 
 .navbar-blur {

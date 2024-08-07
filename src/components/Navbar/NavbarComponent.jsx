@@ -10,7 +10,7 @@ export const NavbarComponent = () => {
     <Navbar expand="lg" className="navbar navbar-blur fixed-top navbar-dark ">
       <Container>
         <Navbar.Brand href="/">
-          <img src={img} width={90} alt="logo" /> SALE FULBACHO
+          <img src={img} width={80} alt="logo" /> SALE FULBACHO
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav d-flex justify-content-start">

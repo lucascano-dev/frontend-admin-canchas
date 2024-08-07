@@ -59,10 +59,11 @@ export const DatePickerComponent = () => {
 
   return (
     <>
-      <div>
+      <div className="date-picker-container">
         <DatePicker
+          showDisabledMonthNavigation
           timeCaption="Hora"
-          className="date-picker"
+          className="custom-date-picker"
           inline
           showTimeSelect
           selected={startDate}
@@ -76,7 +77,7 @@ export const DatePickerComponent = () => {
           //   excludeDates={excludeDates} // Excluye la fecha específica
           filterTime={filterTime}
         >
-          <div style={{ color: 'red' }}>Seleccione una fecha y una hora</div>
+          <div style={{ color: 'red', fontWeight: 'bold', fontSize: '1.1rem' }}>Turno mínimo: 1 hora</div>
         </DatePicker>
       </div>
 

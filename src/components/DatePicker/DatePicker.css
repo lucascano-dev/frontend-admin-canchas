@@ -10,6 +10,27 @@
   color: white; /* Cambia el color del texto si es necesario */
 }
 
+.react-datepicker {
+  height: auto;
+  width: auto;
+}
+.react-datepicker__month-container {
+  height: 300px;
+  font-size: 1.3rem !important;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 5px;
+}
+
+.react-datepicker__navigation--next {
+  background-color: rgb(90, 76, 76);
+}
+.react-datepicker__navigation--previous {
+  background-color: rgb(90, 76, 76);
+}
+
 .react-datepicker__time-list-item--selected {
   background-color: #2d4f3e !important; /* Cambia esto al color que desees */
   color: white !important; /* Cambia el color del texto si es necesario */
@@ -22,4 +43,9 @@
 
 .react-datepicker__month-container {
   font-size: medium;
+}
+
+.custom-date-picker {
+  font-size: 2rem; /* Cambia el tamaño del texto */
+  width: 200px; /* Cambia el ancho del DatePicker */
 }
