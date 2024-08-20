@@ -19,7 +19,7 @@ export const Hero = () => {
             <h2 className="text-white">Buscá un turno ideal para tu partido</h2>
           </div> */}
           <div className="subtitulo">
-            <h2 className="text-white">Buscá canchas disponibles en para vos y tus amigos.</h2>
+            <h2 className="text-white">Buscá canchas disponibles para vos y tus amigos.</h2>
           </div>
         </div>
         <div className="container-turnero">

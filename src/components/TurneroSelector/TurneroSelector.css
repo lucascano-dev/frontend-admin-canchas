@@ -1,7 +1,12 @@
 .container-turnero-selector {
   background-color: rgb(238, 234, 234);
-  border-radius: 20px;
+  border-radius: 50px;
   padding: 10px;
-  width: 90%;
+  width: 80%;
   height: 100px;
+  box-shadow: 5px 10px 20px rgb(0, 0, 0);
+}
+
+.btn-reservar {
+  background-color: #469d18 !important;
 }
