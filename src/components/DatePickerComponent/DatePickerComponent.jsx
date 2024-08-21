@@ -11,7 +11,7 @@ export const DatePickerComponent = () => {
 
   return (
     <>
-      <DatePicker locale="es" className="w-75" showIcon selected={startDate} onChange={(date) => setStartDate(date)} />
+      <DatePicker locale="es" showIcon selected={startDate} onChange={(date) => setStartDate(date)} />
     </>
   );
 };

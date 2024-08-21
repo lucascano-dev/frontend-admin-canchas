@@ -1,0 +1,30 @@
+.time-picker-container {
+  position: relative;
+  /* width: fit-content; */
+}
+
+.time-picker {
+  display: flex;
+  align-items: center;
+}
+
+.icono-time {
+  position: absolute;
+  left: 10px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.react-datepicker-wrapper {
+  /* width: 100%; */
+}
+
+.react-datepicker__input-container {
+  display: flex;
+  align-items: center;
+}
+
+.react-datepicker__input-container input {
+  padding-left: 30px; /* Ajusta este valor según el tamaño del icono */
+  box-sizing: border-box;
+}
