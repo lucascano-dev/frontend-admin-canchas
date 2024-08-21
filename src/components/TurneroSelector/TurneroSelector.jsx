@@ -2,22 +2,25 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { DropDownComponent } from '../DropDownComponent/DropDownComponent';
 import './TurneroSelector.css';
+import { DatePickerComponent } from '../DatePickerComponent/DatePickerComponent';
+import { TimePickerComponent } from '../TimePickerComponent/TimePickerComponent';
+
 export const TurneroSelector = ({ titulo }) => {
   return (
     <>
       <div className="container-turnero-selector d-flex gap-3 justify-content-center align-items-center">
         <DropDownComponent titulo="Elegí una cancha" />
-        <Form className="d-flex align-items-center gap-3">
+        <Form className="d-flex justify-content-center align-items-center gap-3">
           <Form.Group className="mb-0" controlId="formBasicEmail">
-            <Form.Control type="date" placeholder="Enter email" />
+            <DatePickerComponent placeholder="Ingresar fecha" />
           </Form.Group>
 
           <Form.Group className="mb-0" controlId="formBasicPassword">
-            <Form.Control type="time" placeholder="Password" />
+            <TimePickerComponent className="time-input" placeholder="Ingresar hora" />
           </Form.Group>
 
           <Button className="btn-reservar" variant="success" type="submit">
-            Reservar
+            Reservar ⚽
           </Button>
         </Form>
       </div>

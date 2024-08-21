@@ -10,3 +10,7 @@
 .btn-reservar {
   background-color: #469d18 !important;
 }
+
+.react-datepicker__input-container input {
+  text-align: center; /*alinear los input*/
+}
