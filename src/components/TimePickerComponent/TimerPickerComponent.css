@@ -48,9 +48,14 @@
   display: block;
   cursor: not-allowed; /* Cursor para indicar que no es seleccionable */
   pointer-events: none; /*Quito eventos de puntero*/
+  text-decoration: line-through;
 }
 
 .turno-libre {
   display: block;
   color: green;
+}
+
+.turno-libre::before {
+  content: '🟢';
 }

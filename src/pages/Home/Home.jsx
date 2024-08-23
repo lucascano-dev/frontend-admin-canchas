@@ -11,7 +11,9 @@ export const Home = () => {
         <MyCards
           title="mateo"
           text="Texto descriptivo"
-          imageUrl={imagess}
+          imageUrl={
+            'https://dcdn.mitiendanube.com/stores/001/870/211/products/azul-y-naranja-futsal11-96078bcb80ca44310a16649342681756-640-0.png'
+          }
           buttonVariant="btn btn-warning fw-bold py-xxl-2"
           toURL={'/reservame'}
           textButton="Reservar"

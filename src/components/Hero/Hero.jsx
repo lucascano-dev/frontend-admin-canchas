@@ -1,11 +1,8 @@
 // import hero from '../../assets/images/hero.jpeg';
-import { useNavigate } from 'react-router-dom';
 import './Hero.css';
 import { TurneroSelector } from '../TurneroSelector/TurneroSelector';
 
 export const Hero = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="hero">
       <div className="container-hero">

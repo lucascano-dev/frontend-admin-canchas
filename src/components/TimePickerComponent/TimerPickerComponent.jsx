@@ -17,6 +17,26 @@ export const TimePickerComponent = () => {
     { hours: 21, minutes: 30 },
   ];
 
+  // Función para formatear horas y minutos
+  const formatearHora = (hora, minutos) => {
+    return `${hora.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`;
+  };
+
+  // Recorrer el array y formatear las horas
+  const horasFormateadas = turnosReservados.map((turno) => ({
+    time: formatearHora(turno.hours, turno.minutes), //a cada hora le asigno una clave time
+  }));
+
+  // Crear un objeto JSON
+  const data = {
+    turnos: horasFormateadas,
+  };
+  // Convertir a string JSON
+  const jsonData = JSON.stringify(data);
+  console.log(jsonData);
+
+  console.log('Horas formateadas', horasFormateadas);
+
   // Función para habilitar solo ciertos intervalos de tiempo
   const filterPassedTime = (time) => {
     const horaActual = time.getHours();
