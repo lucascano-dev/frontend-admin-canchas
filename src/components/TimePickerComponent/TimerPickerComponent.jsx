@@ -6,17 +6,33 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
 import './TimerPickerComponent.css';
 
 export const TimePickerComponent = () => {
-  const [selectedDate, setSelectedDate] = useState(() => {
-    const date = new Date();
-    date.setHours(14, 0, 0); // Establece la hora a las 14:00
-    return date;
-  });
+  const [selectedDate, setSelectedDate] = useState();
+
+  // Horas bloqueadas: 14:30, 17:00, 18:00, 21:00
+  const horasBloqueadas = [
+    { hours: 14, minutes: 30 },
+    { hours: 17, minutes: 0 },
+    { hours: 18, minutes: 0 },
+    { hours: 21, minutes: 0 },
+  ];
 
   // Función para habilitar solo ciertos intervalos de tiempo
   const filterPassedTime = (time) => {
     const horaActual = time.getHours();
     const minutoActual = time.getMinutes();
     const tiempoEnMinutos = horaActual * 60 + minutoActual;
+
+    // Verificar si la hora actual o la siguiente hora está bloqueada
+    const esHoraBloqueada = horasBloqueadas.some((horaBloqueada) => {
+      const horaBloqueadaEnMinutos = horaBloqueada.hours * 60 + horaBloqueada.minutes;
+      const horaActualEnMinutos = horaActual * 60 + minutoActual;
+
+      return horaActualEnMinutos >= horaBloqueadaEnMinutos && horaActualEnMinutos < horaBloqueadaEnMinutos + 60;
+    });
+
+    if (esHoraBloqueada) {
+      return false;
+    }
 
     // Rango de 00:00 a 02:00
     const rangoInicio1 = 0; // 00:00
@@ -52,7 +68,7 @@ export const TimePickerComponent = () => {
           filterTime={filterPassedTime}
           // minTime={new Date().setHours(1, 0)} // Tiempo mínimo seleccionable (9:00 AM)
           // maxTime={new Date().setHours(23, 0)} // Tiempo máximo seleccionable (6:00 PM)
-          placeholderText="Select a time"
+          placeholderText="Seleccione una hora"
         />
       </div>
     </div>
