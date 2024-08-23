@@ -9,11 +9,12 @@ export const TimePickerComponent = () => {
   const [selectedDate, setSelectedDate] = useState();
 
   // Horas bloqueadas: 14:30, 17:00, 18:00, 21:00
-  const horasBloqueadas = [
+  const turnosReservados = [
     { hours: 14, minutes: 30 },
     { hours: 17, minutes: 0 },
     { hours: 18, minutes: 0 },
     { hours: 21, minutes: 0 },
+    { hours: 21, minutes: 30 },
   ];
 
   // Función para habilitar solo ciertos intervalos de tiempo
@@ -21,18 +22,6 @@ export const TimePickerComponent = () => {
     const horaActual = time.getHours();
     const minutoActual = time.getMinutes();
     const tiempoEnMinutos = horaActual * 60 + minutoActual;
-
-    // Verificar si la hora actual o la siguiente hora está bloqueada
-    const esHoraBloqueada = horasBloqueadas.some((horaBloqueada) => {
-      const horaBloqueadaEnMinutos = horaBloqueada.hours * 60 + horaBloqueada.minutes;
-      const horaActualEnMinutos = horaActual * 60 + minutoActual;
-
-      return horaActualEnMinutos >= horaBloqueadaEnMinutos && horaActualEnMinutos < horaBloqueadaEnMinutos + 60;
-    });
-
-    if (esHoraBloqueada) {
-      return false;
-    }
 
     // Rango de 00:00 a 02:00
     const rangoInicio1 = 0; // 00:00
@@ -42,16 +31,39 @@ export const TimePickerComponent = () => {
     const rangoInicio2 = 14 * 60; // 14:00
     const rangoFin2 = 23 * 70; // 23:30
 
+    // Las horas fuera de los rangos permitidos estarán deshabilitadas
     return (
       (tiempoEnMinutos >= rangoInicio1 && tiempoEnMinutos < rangoFin1) || // 00:00 - 02:00
       (tiempoEnMinutos >= rangoInicio2 && tiempoEnMinutos <= rangoFin2) // 14:00 - 23:00
     );
   };
 
-  // Establecer la hora por defecto a las 11 AM
+  // Función para asignar clases a las horas
+  const getTimeClassName = (time) => {
+    const horaActual = time.getHours();
+    const minutoActual = time.getMinutes();
+    const tiempoEnMinutos = horaActual * 60 + minutoActual;
+
+    // Verificar si la hora actual es un turno reservado
+    const esHoraReservada = turnosReservados.some(
+      (turno) => turno.hours === horaActual && turno.minutes === minutoActual
+    );
+
+    // Verificar si la hora actual está a 30 minutos después de un turno reservado
+    const esHora30MinutosDespues = turnosReservados.some((turno) => {
+      const turnoEnMinutos = turno.hours * 60 + turno.minutes;
+      return tiempoEnMinutos === turnoEnMinutos + 30;
+    });
+
+    if (esHoraReservada || esHora30MinutosDespues) {
+      return 'turno-reservado';
+    }
+
+    return 'turno-libre';
+  };
+
   const defaultTime = new Date();
   defaultTime.setHours(11, 0);
-
   return (
     <div className="time-picker-container">
       <div className="time-picker">
@@ -69,6 +81,7 @@ export const TimePickerComponent = () => {
           // minTime={new Date().setHours(1, 0)} // Tiempo mínimo seleccionable (9:00 AM)
           // maxTime={new Date().setHours(23, 0)} // Tiempo máximo seleccionable (6:00 PM)
           placeholderText="Seleccione una hora"
+          timeClassName={getTimeClassName}
         />
       </div>
     </div>

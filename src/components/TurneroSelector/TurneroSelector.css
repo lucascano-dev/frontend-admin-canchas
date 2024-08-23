@@ -7,6 +7,12 @@
   box-shadow: 5px 10px 20px rgb(0, 0, 0);
 }
 
+.container-turnero-selector input {
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  padding: 5px;
+}
+
 .btn-reservar {
   background-color: #469d18 !important;
 }

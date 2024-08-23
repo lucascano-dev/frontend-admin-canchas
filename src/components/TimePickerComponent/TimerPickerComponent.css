@@ -36,8 +36,21 @@
   ul.react-datepicker__time-list
   li.react-datepicker__time-list-item--disabled {
   display: none;
+  color: red;
 }
 
 /* .react-datepicker__time-list-item {
   color: red;
 } */
+
+.turno-reservado {
+  color: red;
+  display: block;
+  cursor: not-allowed; /* Cursor para indicar que no es seleccionable */
+  pointer-events: none; /*Quito eventos de puntero*/
+}
+
+.turno-libre {
+  display: block;
+  color: green;
+}
