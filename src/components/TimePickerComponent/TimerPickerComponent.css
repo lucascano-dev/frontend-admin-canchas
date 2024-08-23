@@ -28,3 +28,12 @@
   padding-left: 30px; /* Ajusta este valor según el tamaño del icono */
   box-sizing: border-box;
 }
+
+/*Oculta horas no deseadas en DatePicker (no habilitadas)*/
+.react-datepicker__time-container
+  .react-datepicker__time
+  .react-datepicker__time-box
+  ul.react-datepicker__time-list
+  li.react-datepicker__time-list-item--disabled {
+  display: none;
+}

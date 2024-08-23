@@ -14,21 +14,21 @@ export const TimePickerComponent = () => {
 
   // Función para habilitar solo ciertos intervalos de tiempo
   const filterPassedTime = (time) => {
-    const currentHour = time.getHours();
-    const currentMinute = time.getMinutes();
-    const timeInMinutes = currentHour * 60 + currentMinute;
+    const horaActual = time.getHours();
+    const minutoActual = time.getMinutes();
+    const tiempoEnMinutos = horaActual * 60 + minutoActual;
 
     // Rango de 00:00 a 02:00
-    const range1Start = 0; // 00:00
-    const range1End = 2 * 45; // 02:00 en minutos
+    const rangoInicio1 = 0; // 00:00
+    const rangoFin1 = 2 * 45; // 02:00 en minutos
 
     // Rango de 14:00 a 23:00
-    const range2Start = 14 * 60; // 14:00
-    const range2End = 23 * 70; // 23:30
+    const rangoInicio2 = 14 * 60; // 14:00
+    const rangoFin2 = 23 * 70; // 23:30
 
     return (
-      (timeInMinutes >= range1Start && timeInMinutes < range1End) || // 00:00 - 02:00
-      (timeInMinutes >= range2Start && timeInMinutes <= range2End) // 14:00 - 23:00
+      (tiempoEnMinutos >= rangoInicio1 && tiempoEnMinutos < rangoFin1) || // 00:00 - 02:00
+      (tiempoEnMinutos >= rangoInicio2 && tiempoEnMinutos <= rangoFin2) // 14:00 - 23:00
     );
   };
 
