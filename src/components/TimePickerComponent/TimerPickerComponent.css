@@ -1,0 +1,61 @@
+.time-picker-container {
+  position: relative;
+  /* width: fit-content; */
+}
+
+.time-picker {
+  display: flex;
+  align-items: center;
+}
+
+.icono-time {
+  position: absolute;
+  left: 10px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.react-datepicker-wrapper {
+  /* width: 100%; */
+}
+
+.react-datepicker__input-container {
+  display: flex;
+  align-items: center;
+}
+
+.react-datepicker__input-container input {
+  padding-left: 30px; /* Ajusta este valor según el tamaño del icono */
+  box-sizing: border-box;
+}
+
+/*Oculta horas no deseadas en DatePicker (no habilitadas)*/
+.react-datepicker__time-container
+  .react-datepicker__time
+  .react-datepicker__time-box
+  ul.react-datepicker__time-list
+  li.react-datepicker__time-list-item--disabled {
+  display: none;
+  color: red;
+}
+
+/* .react-datepicker__time-list-item {
+  color: red;
+} */
+
+.turno-reservado {
+  color: red;
+  display: block;
+  cursor: not-allowed; /* Cursor para indicar que no es seleccionable */
+  pointer-events: none; /*Quito eventos de puntero*/
+  text-decoration: line-through;
+}
+
+.turno-libre {
+  display: block;
+  color: green;
+}
+
+.turno-libre::before {
+  content: '🟢';
+}

@@ -1,8 +1,40 @@
 .navbar {
-  padding: 0.5rem 2rem;
-  backdrop-filter: blur(15px) !important;
   border-bottom: 3px solid #216783;
-  position: fixed;
-  z-index: 1;
+  color: white;
+  height: auto;
+  font-size: 1.1rem;
+}
+
+.navbar-blur {
+  background-color: rgba(30, 101, 105, 0.608); /* Color blanco con 70% de opacidad */
+  backdrop-filter: blur(5px); /* Aplicar un desenfoque de 10px */
+  /* -webkit-backdrop-filter: blur(10px); Compatibilidad con Safari */
+}
+
+.seccion-links {
   width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+}
+
+.seccion-info {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-blur .navbar-nav .nav-link,
+.navbar-blur .navbar-brand,
+.navbar-blur .navbar-nav .nav-dropdown {
+  color: white;
+}
+
+.navbar-blur .navbar-nav .nav-link:hover,
+.navbar-blur .navbar-nav .nav-link:focus,
+.navbar-blur .navbar-nav .nav-dropdown:hover,
+.navbar-blur .navbar-nav .nav-dropdown:focus {
+  color: yellow; /* Cambia el color a amarillo al pasar el cursor */
 }

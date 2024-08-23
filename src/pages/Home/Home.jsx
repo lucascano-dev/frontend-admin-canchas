@@ -1,12 +1,88 @@
 import { Hero } from '../../components/Hero/Hero';
-import { NavbarComponent } from '../../components/Navbar/NavbarComponent';
-
+import imagess from '../../assets/images/hero.jpeg';
+import { MyCards } from '../../components/MyCards/MyCards';
 export const Home = () => {
   return (
-    <div className="Hero">
-      <NavbarComponent />
-      {/* <h1 className="text-center bg-danger">Home</h1> */}
-      <Hero />
-    </div>
+    <>
+      <div className="Home">
+        <Hero />
+      </div>
+      <div className="Cards d-flex justify-content-center flex-wrap m-5 gap-5">
+        <MyCards
+          title="mateo"
+          text="Texto descriptivo"
+          imageUrl={
+            'https://dcdn.mitiendanube.com/stores/001/870/211/products/azul-y-naranja-futsal11-96078bcb80ca44310a16649342681756-640-0.png'
+          }
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservame'}
+          textButton="Reservar"
+        />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
+        <MyCards
+          title="Mi titulo"
+          text="Texto descriptivo"
+          imageUrl={imagess}
+          buttonVariant="btn btn-warning fw-bold py-xxl-2"
+          toURL={'/reservas'}
+          textButton="Reservar"
+        />
+      </div>
+    </>
   );
 };
