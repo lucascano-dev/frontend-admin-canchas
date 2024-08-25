@@ -4,7 +4,7 @@ import { DropDownComponent } from '../DropDownComponent/DropDownComponent';
 import './TurneroSelector.css';
 import { DatePickerComponent } from '../DatePickerComponent/DatePickerComponent';
 import { TimePickerComponent } from '../TimePickerComponent/TimerPickerComponent';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 export const TurneroSelector = () => {
@@ -14,12 +14,12 @@ export const TurneroSelector = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    // if (selectedDate && selectedTime) {
-    console.log('Fecha seleccionada:', selectedDate);
-    console.log('Hora seleccionada:', selectedTime);
-    // } else {
-    console.log('Selecciona una fecha y hora antes de reservar');
-    // }
+    if (selectedDate && selectedTime) {
+      console.log('Fecha seleccionada:', selectedDate);
+      console.log('Hora seleccionada:', selectedTime);
+    } else {
+      alert('Por favor, selecciona una fecha y una hora');
+    }
     // navigate('/reservas');
   };
 

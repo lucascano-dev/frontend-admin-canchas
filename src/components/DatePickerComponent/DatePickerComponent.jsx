@@ -11,9 +11,12 @@ registerLocale('es', es);
 export const DatePickerComponent = ({ onDateChange }) => {
   const [startDate, setStartDate] = useState(null); // Inicialmente null para que aparezca el placeholder
 
-  const handleDateChange = (date) => {
-    setStartDate(date);
-    onDateChange(date); // Llamada a la función para pasar la fecha al componente padre
+  const handleDateChange = (fecha) => {
+    const fechaFormateada = fecha.toISOString().split('T')[0]; // Convierte a 'YYYY-MM-DD'
+
+    console.log('DATE ES: ', fechaFormateada);
+    setStartDate(fechaFormateada);
+    onDateChange(fechaFormateada); // Llamada a la función para pasar la fecha al componente padre
   };
 
   return (
