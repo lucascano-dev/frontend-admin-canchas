@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Buttons } from '../Buttons/Buttons';
 
 export const MyCards = ({ title, text, imageUrl, buttonVariant, textButton, toURL }) => {
-  console.log(imageUrl);
+  // console.log(imageUrl);
 
   return (
     <Card style={{ width: '17rem' }}>

@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 // import 'react-datepicker/dist/react-datepicker.css';
 import './TimerPickerComponent.css';
 
-export const TimePickerComponent = () => {
-  const [selectedDate, setSelectedDate] = useState();
+export const TimePickerComponent = ({ onTimeChange }) => {
+  const [selectedDate, setSelectedDate] = useState(null);
 
   // Horas bloqueadas: 14:30, 17:00, 18:00, 21:00
   const turnosReservados = [
@@ -17,25 +18,26 @@ export const TimePickerComponent = () => {
     { hours: 21, minutes: 30 },
   ];
 
-  // Función para formatear horas y minutos
-  const formatearHora = (hora, minutos) => {
-    return `${hora.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`;
-  };
+  // // Función para formatear horas y minutos
+  // const formatearHora = (hora, minutos) => {
+  //   console.log('HORA FORMATEADA:', `${hora.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`);
+  //   return `${hora.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`;
+  // };
 
-  // Recorrer el array y formatear las horas
-  const horasFormateadas = turnosReservados.map((turno) => ({
-    time: formatearHora(turno.hours, turno.minutes), //a cada hora le asigno una clave time
-  }));
+  // // Recorrer el array y formatear las horas
+  // const horasFormateadas = turnosReservados.map((turno) => ({
+  //   time: formatearHora(turno.hours, turno.minutes), //a cada hora le asigno una clave time
+  // }));
 
-  // Crear un objeto JSON
-  const data = {
-    turnos: horasFormateadas,
-  };
-  // Convertir a string JSON
-  const jsonData = JSON.stringify(data);
-  console.log(jsonData);
+  // // Crear un objeto JSON
+  // const data = {
+  //   turnos: horasFormateadas,
+  // };
+  // // Convertir a string JSON
+  // const jsonData = JSON.stringify(data);
+  // console.log(jsonData);
 
-  console.log('Horas formateadas', horasFormateadas);
+  // console.log('Horas formateadas', horasFormateadas);
 
   // Función para habilitar solo ciertos intervalos de tiempo
   const filterPassedTime = (time) => {
@@ -82,15 +84,25 @@ export const TimePickerComponent = () => {
     return 'turno-libre';
   };
 
-  const defaultTime = new Date();
-  defaultTime.setHours(11, 0);
+  const handleTimeChange = (tiempo) => {
+    setSelectedDate(tiempo);
+    const horaFormateada = tiempo.toLocaleTimeString('es-ES', {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+    console.log('TIME:', horaFormateada);
+    onTimeChange(horaFormateada); // Llamada a la función para pasar solo la hora al componente padre
+  };
+
+  // const defaultTime = new Date();
+  // defaultTime.setHours(11, 0);
   return (
     <div className="time-picker-container">
       <div className="time-picker">
         <FontAwesomeIcon icon={faClock} className="icono-time" />
         <DatePicker
           selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
+          onChange={handleTimeChange}
           showTimeSelect
           showTimeSelectOnly
           timeIntervals={30}
@@ -106,4 +118,8 @@ export const TimePickerComponent = () => {
       </div>
     </div>
   );
+};
+
+TimePickerComponent.propTypes = {
+  onTimeChange: PropTypes.func.isRequired,
 };

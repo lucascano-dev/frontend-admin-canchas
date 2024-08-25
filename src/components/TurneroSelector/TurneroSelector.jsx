@@ -4,20 +4,36 @@ import { DropDownComponent } from '../DropDownComponent/DropDownComponent';
 import './TurneroSelector.css';
 import { DatePickerComponent } from '../DatePickerComponent/DatePickerComponent';
 import { TimePickerComponent } from '../TimePickerComponent/TimerPickerComponent';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export const TurneroSelector = () => {
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate('/reservas');
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
+  // const navigate = useNavigate();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (selectedDate && selectedTime) {
+      console.log('Fecha seleccionada:', selectedDate);
+      console.log('Hora seleccionada:', selectedTime);
+    } else {
+      alert('Por favor, selecciona una fecha y una hora');
+    }
+    // navigate('/reservas');
   };
+
   return (
     <>
       <div className="container-turnero-selector d-flex gap-3 justify-content-center align-items-center">
         <DropDownComponent titulo="Elegí una cancha" />
         <Form className="d-flex justify-content-center align-items-center gap-3">
-          <DatePickerComponent placeholder="Ingresar fecha" />
-          <TimePickerComponent className="time-input" placeholder="Ingresar hora" />
+          <DatePickerComponent onDateChange={(date) => setSelectedDate(date)} placeholder="Ingresar fecha" />
+          <TimePickerComponent
+            onTimeChange={(time) => setSelectedTime(time)}
+            className="time-input"
+            placeholder="Ingresar hora"
+          />
 
           <Button className="btn-reservar" variant="success" onClick={handleClick} type="submit">
             Reservar ⚽
