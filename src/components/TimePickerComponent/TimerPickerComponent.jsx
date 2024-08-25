@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 // import 'react-datepicker/dist/react-datepicker.css';
@@ -19,6 +20,7 @@ export const TimePickerComponent = ({ onTimeChange }) => {
 
   // Función para formatear horas y minutos
   const formatearHora = (hora, minutos) => {
+    console.log('HORA FORMATEADA:', `${hora.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`);
     return `${hora.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`;
   };
 
@@ -112,4 +114,8 @@ export const TimePickerComponent = ({ onTimeChange }) => {
       </div>
     </div>
   );
+};
+
+TimePickerComponent.propTypes = {
+  onTimeChange: PropTypes.func.isRequired,
 };

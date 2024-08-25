@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import DatePicker, { registerLocale } from 'react-datepicker';
 import es from 'date-fns/locale/es';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -26,4 +28,8 @@ export const DatePickerComponent = ({ onDateChange }) => {
       />
     </>
   );
+};
+
+DatePickerComponent.propTypes = {
+  onDateChange: PropTypes.func.isRequired,
 };
