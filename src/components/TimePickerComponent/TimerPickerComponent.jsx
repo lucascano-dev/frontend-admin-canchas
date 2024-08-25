@@ -5,7 +5,7 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
 // import 'react-datepicker/dist/react-datepicker.css';
 import './TimerPickerComponent.css';
 
-export const TimePickerComponent = () => {
+export const TimePickerComponent = ({ onTimeChange }) => {
   const [selectedDate, setSelectedDate] = useState();
 
   // Horas bloqueadas: 14:30, 17:00, 18:00, 21:00
@@ -82,15 +82,21 @@ export const TimePickerComponent = () => {
     return 'turno-libre';
   };
 
-  const defaultTime = new Date();
-  defaultTime.setHours(11, 0);
+  const handleTimeChange = (date) => {
+    setSelectedDate(date);
+    onTimeChange(date); // Llamada a la función para pasar la hora al componente padre
+    console.log('Hora seleccionada en TimePickerComponent:', date);
+  };
+
+  // const defaultTime = new Date();
+  // defaultTime.setHours(11, 0);
   return (
     <div className="time-picker-container">
       <div className="time-picker">
         <FontAwesomeIcon icon={faClock} className="icono-time" />
         <DatePicker
           selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
+          onChange={handleTimeChange}
           showTimeSelect
           showTimeSelectOnly
           timeIntervals={30}

@@ -6,12 +6,24 @@ import './DatePickerComponent.css';
 
 registerLocale('es', es);
 
-export const DatePickerComponent = () => {
-  const [startDate, setStartDate] = useState(new Date());
+export const DatePickerComponent = ({ onDateChange }) => {
+  const [startDate, setStartDate] = useState(null); // Inicialmente null para que aparezca el placeholder
+
+  const handleDateChange = (date) => {
+    setStartDate(date);
+    onDateChange(date); // Llamada a la función para pasar la fecha al componente padre
+  };
 
   return (
     <>
-      <DatePicker locale="es" showIcon selected={startDate} onChange={(date) => setStartDate(date)} />
+      <DatePicker
+        locale="es"
+        showIcon
+        selected={startDate}
+        placeholderText="Elegí una fecha"
+        onChange={handleDateChange}
+        dateFormat="dd/MM/yyyy" // Formato de fecha que se mostrará en el input
+      />
     </>
   );
 };
