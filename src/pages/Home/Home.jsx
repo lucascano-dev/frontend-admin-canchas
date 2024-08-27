@@ -1,5 +1,5 @@
 import { Hero } from '../../components/Hero/Hero';
-import imagess from '../../assets/images/hero.jpeg';
+import imagess from '../../assets/images/card_example.jpeg';
 import { MyCards } from '../../components/MyCards/MyCards';
 export const Home = () => {
   return (
