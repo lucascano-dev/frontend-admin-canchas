@@ -1,0 +1,8 @@
+.InfoHome {
+  background-size: contain;
+
+  background-repeat: no-repeat;
+  height: 30vh;
+  width: 100%;
+  background-image: url('../../assets/images/futbolHero.jpg');
+}
