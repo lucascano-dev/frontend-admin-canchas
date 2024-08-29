@@ -17,6 +17,7 @@ export const TurneroSelector = () => {
     if (selectedDate && selectedTime) {
       console.log('Fecha seleccionada:', selectedDate);
       console.log('Hora seleccionada:', selectedTime);
+      console.log('Formato ISO', selectedDate + 'T' + selectedTime + ':00-03:00'); //Doy formato hora ISO 8601
     } else {
       alert('Por favor, selecciona una fecha y una hora');
     }
