@@ -1,5 +1,5 @@
 import { Hero } from '../../components/Hero/Hero';
-import imagess from '../../assets/images/card_example.jpeg';
+// import imagess from '../../assets/images/card_example.jpeg';
 import { MyCards } from '../../components/MyCards/MyCards';
 import { productos } from '../../utils/mocks/productos';
 import { InfoHome } from '../../components/InfoHome/InfoHome';
