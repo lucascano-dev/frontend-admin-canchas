@@ -27,6 +27,7 @@ export const DatePickerComponent = ({ onDateChange }) => {
         selected={startDate}
         placeholderText="Elegí una fecha"
         onChange={handleDateChange}
+        minDate={new Date()} // Establece la fecha miínima como la fecha actual.Esto deshabilita los días anteriores a la fecha actual
         dateFormat="dd/MM/yyyy" // Formato de fecha que se mostrará en el input
       />
     </>
