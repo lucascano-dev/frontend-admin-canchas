@@ -1,0 +1,27 @@
+.container-page-register {
+  background-image: url('../../assets/images/futbolHero-dark1.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20vh;
+}
+
+.container-form-register {
+  /* width: 40%; */
+  /* height: auto; */
+  padding: 30px;
+}
+
+.container-logo-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.container-logo-register img {
+  width: 50%;
+}
