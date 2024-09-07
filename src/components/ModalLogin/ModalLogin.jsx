@@ -13,7 +13,15 @@ export const ModalLogin = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(event);
+    if (!email || !password) {
+      alert('Todos los campos son obligatorios');
+      return;
+    } else if (password.length < 6) {
+      alert('La contraseña debe tener al menos 6 caracteres');
+      return;
+    } else if (!email.includes('@')) {
+      alert('El correo debe tener un @');
+    }
     console.log({
       email: email,
       password: password,
