@@ -6,7 +6,7 @@ export const FormularioRegistro = () => {
   return (
     <Form className="container-formulario-registro">
       <Form.Group className="fs-6 mb-3 d-flex flex-column gap-2" controlId="formBasicEmail">
-        <h3 className="mb-4">Creá una cuenta</h3>
+        <h3 className="mb-3">Creá una cuenta</h3>
         <div className="nombre-apellido d-flex gap-5">
           <div>
             <Form.Label>Nombre</Form.Label>
