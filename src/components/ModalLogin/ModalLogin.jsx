@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 
 export const ModalLogin = () => {
   const [show, setShow] = useState(false);
@@ -11,9 +12,23 @@ export const ModalLogin = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const redireccionar = useNavigate();
+
+  const handleBtnRegistrar = () => {
+    redireccionar('/register');
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(event);
+    if (!email || !password) {
+      alert('Todos los campos son obligatorios');
+      return;
+    } else if (password.length < 6) {
+      alert('La contraseña debe tener al menos 6 caracteres');
+      return;
+    } else if (!email.includes('@')) {
+      alert('El correo debe tener un @');
+    }
     console.log({
       email: email,
       password: password,
@@ -61,7 +76,9 @@ export const ModalLogin = () => {
         <Modal.Footer className="d-flex justify-content-center">
           <Form.Group className="d-flex justify-content-center align-items-center">
             <span className="fs-6 fw-normal">¿No estás registrado?</span>
-            <Button variant="link">Registrate ahora</Button>
+            <Button variant="link" onClick={handleBtnRegistrar}>
+              Registrate ahora
+            </Button>
           </Form.Group>
         </Modal.Footer>
       </Modal>
