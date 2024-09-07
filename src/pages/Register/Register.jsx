@@ -1,4 +1,4 @@
-import { FormularioRegistro } from '../../components/Register/Register';
+import { FormularioRegistro } from '../../components/FormularioRegister/FormularioRegistro';
 import './Register.css';
 import logo from '../../assets/images/logo.png';
 
