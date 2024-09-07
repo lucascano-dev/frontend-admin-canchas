@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
+import apiService from '../../api/apiService';
 
 export const ModalLogin = () => {
   const [show, setShow] = useState(false);
@@ -15,6 +16,7 @@ export const ModalLogin = () => {
   const redireccionar = useNavigate();
 
   const handleBtnRegistrar = () => {
+    handleClose();
     redireccionar('/register');
   };
 
@@ -33,6 +35,17 @@ export const ModalLogin = () => {
       email: email,
       password: password,
     });
+
+    handleBtnLogin(email, password);
+  };
+
+  const handleBtnLogin = async (email, password) => {
+    try {
+      const resp = await apiService.post('/auth/login', { email, password });
+      console.log('RESPUESTA:', resp);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
