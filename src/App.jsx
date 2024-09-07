@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer';
 import { NavbarComponent } from './components/Navbar/NavbarComponent';
 import { AppRouter } from './routers/AppRouter';
@@ -5,9 +6,11 @@ import { AppRouter } from './routers/AppRouter';
 function App() {
   return (
     <div>
-      <NavbarComponent />
-      <AppRouter />
-      <Footer />
+      <BrowserRouter>
+        <NavbarComponent />
+        <AppRouter />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
