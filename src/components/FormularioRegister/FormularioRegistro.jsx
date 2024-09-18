@@ -33,7 +33,7 @@ export const FormularioRegistro = () => {
             <Form.Control type="password" placeholder="Contraseña" />
           </div>
           <div>
-            <Form.Label>Domicilio</Form.Label>
+            <Form.Label>Confirmar contraseña</Form.Label>
             <Form.Control type="password" placeholder="" />
           </div>
         </div>
